@@ -1,0 +1,25 @@
+/*navbar*/
+nav div#navbar div#navbarheader a.nav-brand{ width: 100px; margin: auto; padding-top: 10px; position: absolute; left: 50%; display: block;}
+nav div#navbar div#navbarheader a.nav-brand img{ width: 100%; }
+nav div#navbar div#navbarheader{ padding-left: 10px; }
+nav div#navbar div#navbarheader span{ width: 25px; }
+nav.navbar{ position: relative; }
+nav div#navbar hr{ margin-bottom: 0px; }
+nav div#navbar div#navbarheader button.navbar-toggle span.icon-bar{ display: block; width: 22px; height: 2px; background: #A9A9A9; border-radius: 1px; }
+nav div#navbar div#sub-navbar{ margin: auto; max-width: 600px; }
+nav div#navbar ul.sub-nav{ text-align: center; }
+nav div#navbar ul.sub-nav li{ list-style: none; display: inline-block; padding: 10px 30px 0px 30px; }
+nav div#navbar .in{ background-color: #ffffff;}
+nav div#navbar div.input-group{ width: 240px; }
+nav div#navbar ul.navbar-nav > li > a:focus{ background: rgba(0,0,0,0); }
+nav div#navbar ul.navbar-nav > li > a:hover{ background: rgba(0,0,0,0); }
+
+/*footer*/
+footer{ background-color:#E6E6FA; }
+footer div.container{ padding-top: 20px; padding-left: 20px; }
+footer div.container div.row ul{ margin: auto; width: 200px; }
+footer div.container div.row ul > li{ list-style: none; text-align: center; padding-top: 5px; padding-bottom: 5px; }
+footer p{ margin: 5px 0px 5px 0px; }
+footer input{ margin: 5px 0px -5px 0px; }
+footer button{ margin: -5px 0px -5px 0px; }
+footer .end-col{ text-align: center; }

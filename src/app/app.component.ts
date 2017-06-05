@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  flag = false; //show Search Box
+	isIn = false; //toggle thing
+  
+	showSearch(){
+		this.flag = !this.flag;
+	};
+
+    toggleState() {
+        let bool = this.isIn;
+        this.isIn = bool === false ? true : false; 
+        this.flag = true;
+    }
+
+    tabClick(){
+    	this.isIn = false; 
+    }
 }

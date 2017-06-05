@@ -1,0 +1,8 @@
+div.session_a{ width: 95%; margin:auto auto 4em auto; position:relative; }
+div.session_a div.row div.col-sm-6{ padding-left: 0px; padding-right: 0px; }
+div.session_a div.row div.col-sm-6 div.col-12.img-small{ min-height: 250px; position: relative; padding-left: 0px; padding-right: 0px; border: 2px solid white; }
+div.session_a div.row div.col-sm-6 div.col-12.img-large{ min-height: 500px; position: relative; padding-left: 0px; padding-right: 0px; border: 2px solid white; }
+h1{ text-align: center; font-family: "Times New Roman", Georgia, Serif; }
+@media (max-width: 768px){
+	div.session_a div.row  div.col-sm-6 div.col-12.img-large { min-height: 250px; }
+}
