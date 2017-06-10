@@ -1,3 +1,47 @@
-<p>
-  contact works!
-</p>
+<div class="container">
+	<div class="row">
+		<form (ngSubmit) = "onSubmit(f)" #f = "ngForm">
+		  <div class="form-group">
+		    <label for="InputName">Full Name</label>
+		    <input type="text" class="form-control" name="fullName" [ngModel]='fullName' placeholder="Full Name" >
+		  </div>
+		  <div class="form-group">
+		    <label for="InputEmail">Email address</label>
+		    <input type="email" class="form-control" name="inputEmail" [ngModel]='inputEmail' aria-describedby="emailHelp" placeholder="Enter email">
+		    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+		  </div>
+		  <div class="form-group">
+		    <label for="Textarea">Comment</label>
+		    <textarea class="form-control" id="textarea" name="textarea" [ngModel]="textarea" rows="3"></textarea>
+		  </div>
+		  <fieldset class="form-group">
+		    <legend>Radio buttons</legend>
+		    <div class="form-check">
+		      <label class="form-check-label">
+		        <input type="radio" class="form-check-input" name="optionsRadios" [(ngModel)]="rating" id="optionsRadios1" value="option1" checked>
+		       1 Star
+		      </label>
+		    </div>
+		    <div class="form-check">
+		    <label class="form-check-label">
+		        <input type="radio" class="form-check-input" name="optionsRadios" [(ngModel)]="rating" id="optionsRadios2" value="option2">
+		        2 Star
+		    </label>
+		    </div>
+		    <div class="form-check">
+		    <label class="form-check-label">
+		        <input type="radio" class="form-check-input" name="optionsRadios" [(ngModel)]="rating" id="optionsRadios3" value="option3">
+		        3 Star
+		      </label>
+		    </div>
+		  </fieldset>
+		  <div class="form-check">
+		    <label class="form-check-label">
+		      <input type="checkbox" class="form-check-input" [checked]="mycheckbox" (change)="mycheckbox = !mycheckbox">
+		      Check me out
+		    </label>
+		  </div>
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</div>

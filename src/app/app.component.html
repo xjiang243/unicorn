@@ -1,66 +1,25 @@
-<nav class="navbar navbar-fixed-top" role="navigation">
-        <div id="navbar" class="container">
-            <div id="navbarheader" class="navbar-header">
-                <button type="button" class="pull-left navbar-toggle collapsed" (click)="toggleState()">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="nav-brand">
-                  <img src="../assets/images/logo-retina.png">
-                </a>
-            </div>
-            <div class="navbar-collapse collapse" [ngClass] = "{ 'in' : isIn }">
-                    <ul class="nav navbar-nav navbar-left">
-                      <li><a>
-                          <div [hidden] = "!flag">
-                            <div class="input-group">
-                                 <input type="text" class="form-control" placeholder="Search Store ...">
-                                 <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-                                 <span class="input-group-addon" (click)="showSearch()">X</span>
-                            </div>
-                          </div>
-                          <div [hidden] = "flag">
-                            <span class="glyphicon glyphicon-search" (click) = "showSearch()"> SEARCH</span>
-                          </div>
-                          </a>
-                      </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li >
-                          <a href="#">
-                          ACCOUNT <span class="glyphicon glyphicon-user"></span>
-                          </a>
-                        </li>
-                    </ul>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" 
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Navbar</a>
 
-                <div *ngIf="!isIn">
-                  <br>
-                  <br>
-                </div>
-                <hr>
-                 
-                      <ul class="sub-nav" >
-                        <li ><a [routerLink]="['/']" (click)="tabClick()">
-                            <span class="glyphicon glyphicon-home"
-                             aria-hidden="true"></span> Home</a></li>
-                        <li ><a [routerLink]="['/about']" (click)="tabClick()">
-                            <span class="glyphicon glyphicon-info-sign"
-                             aria-hidden="true"></span> About</a></li>
-                       <!--  <li ><a (click)="tabClick()">
-                             <span class="glyphicon glyphicon-list-alt"
-                             aria-hidden="true"></span> 
-                             Menu</a></li>
-                         <li ><a [routerLink]="['/github', 'angular']" (click)="tabClick()">
-                         <i class="fa fa-heart-o"></i> Github Repos</a></li> -->
-                         <li ><a [routerLink]="['/contact']" (click)="tabClick()">
-                         <i class="fa fa-envelope-o"></i> Contact Us</a></li>
-                    </ul> 
-                
-            </div>
-        </div>
-    </nav> 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+        
+    </div>
+  </nav>
 
   <main>
     <router-outlet></router-outlet>
