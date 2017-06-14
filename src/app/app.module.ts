@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from "@angular/http";
 import { rootRouterConfig } from './app.routes';
 
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { ContactComponent } from './contact/contact.component';
     ContactComponent
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
