@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, FormsModule } from "@angular/forms";
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 import { Comment } from './comment.model';
 
@@ -19,10 +18,13 @@ export class ContactComponent implements OnInit {
   private comment: Comment;
   private rating: String;
   private mycheckbox: Boolean;
+  private comments: Comment[];
 
-  constructor(private commentService: CommentService, public http: Http) {}
+  constructor(private commentService: CommentService) {}
 
   ngOnInit() {
+    console.log(this.commentService.getComments());
+    this.commentService.getComments().subscribe(comments => this.comments = comments);
   }
 
   onSubmit(form: NgForm){
@@ -32,13 +34,14 @@ export class ContactComponent implements OnInit {
 
     console.log(this.comment);
     this.commentService.addComment(this.comment);
+    this.comments.push(this.comment);
+    form.reset();
+    this.mycheckbox = false;
+  }
 
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-
-    this.http.post('http://localhost:3000/createComments',
-    JSON.stringify(this.comment), { headers: headers })
-      .subscribe(err => console.log(err));
+  delete(id: string){
+    this.commentService.deleteComment(id).subscribe( result => console.log(result));
+    location.reload();
   }
 
 

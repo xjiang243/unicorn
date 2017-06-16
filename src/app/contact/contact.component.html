@@ -1,5 +1,6 @@
 <div class="container">
 	<div class="row">
+	<div class="col-sm-12 col-md-6">
 		<form (ngSubmit) = "onSubmit(f)" #f = "ngForm">
 		  <div class="form-group">
 		    <label for="InputName">Full Name</label>
@@ -43,5 +44,17 @@
 		  </div>
 		  <button type="submit" class="btn btn-primary">Submit</button>
 		</form>
+	</div>
+
+	<div class="col-sm-12 col-md-6">
+	<ul *ngFor="let comment of comments" style="list-style: none">
+			<li (click) = "delete(comment._id)">
+				<blockquote class="blockquote">
+				  <p class="mb-0">{{comment.content}}</p>
+				  <footer class="blockquote-footer">{{comment.fullName}}</footer>
+				</blockquote>
+			</li>
+		</ul>
+	</div>
 	</div>
 </div>
