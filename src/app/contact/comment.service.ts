@@ -14,7 +14,7 @@ export class CommentService {
 
     addComment(comment: Comment) {
 
-       console.log("I am in the service" + "  " +comment.content);
+       console.log("Content in Service: " + comment.content);
        var headers = new Headers();
        headers.append("Content-Type", "application/json");
        this.http.post("http://localhost:3000/",
@@ -30,6 +30,7 @@ export class CommentService {
      }
 
     deleteComment(id: string): Observable<Comment>{
+        
         console.log(id);
         return this.http.delete("http://localhost:3000/" + id)
         .map(this.extractData)

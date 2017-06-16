@@ -40,7 +40,11 @@ export class ContactComponent implements OnInit {
   }
 
   delete(id: string){
-    this.commentService.deleteComment(id).subscribe( result => console.log(result));
+    this.commentService.deleteComment(id)
+    .subscribe(
+                result => console.log(result),
+                error => console.log(error)
+                );
     location.reload();
   }
 
