@@ -16,7 +16,7 @@ import { CommentService } from './comment.service';
 export class ContactComponent implements OnInit {
 
   private comment: Comment;
-  private rating: String;
+  private rating: Number;
   private mycheckbox: Boolean;
   private comments: Comment[];
 
@@ -30,8 +30,7 @@ export class ContactComponent implements OnInit {
   onSubmit(form: NgForm){
 
     this.comment = new Comment(form.value.fullName, form.value.inputEmail, form.value.textarea, 
-    this.rating, this.mycheckbox)
-
+    Number(this.rating), this.mycheckbox)
     console.log(this.comment);
     this.commentService.addComment(this.comment);
     this.comments.push(this.comment);

@@ -19,20 +19,20 @@
 		    <legend>Radio buttons</legend>
 		    <div class="form-check">
 		      <label class="form-check-label">
-		        <input type="radio" class="form-check-input" name="optionsRadios" [(ngModel)]="rating" id="optionsRadios1" value="option1" checked>
+		        <input type="radio" class="form-check-input" name="optionsRadios" [(ngModel)]="rating" id="optionsRadios1" value="1" checked>
 		       1 Star
 		      </label>
 		    </div>
 		    <div class="form-check">
 		    <label class="form-check-label">
-		        <input type="radio" class="form-check-input" name="optionsRadios" [(ngModel)]="rating" id="optionsRadios2" value="option2">
-		        2 Star
+		        <input type="radio" class="form-check-input" name="optionsRadios" [(ngModel)]="rating" id="optionsRadios2" value="2">
+		        2 Stars
 		    </label>
 		    </div>
 		    <div class="form-check">
 		    <label class="form-check-label">
-		        <input type="radio" class="form-check-input" name="optionsRadios" [(ngModel)]="rating" id="optionsRadios3" value="option3">
-		        3 Star
+		        <input type="radio" class="form-check-input" name="optionsRadios" [(ngModel)]="rating" id="optionsRadios3" value="3">
+		        3 Stars
 		      </label>
 		    </div>
 		  </fieldset>
@@ -50,6 +50,15 @@
 	<ul *ngFor="let comment of comments" style="list-style: none">
 			<li (click) = "delete(comment._id)">
 				<blockquote class="blockquote">
+				  <div *ngIf="comment.rating == 1">
+				  	<i  class="fa fa-star" aria-hidden="true"></i>
+				  </div>
+				  <div *ngIf="comment.rating ==2">
+				  	<i *ngFor="let i of [1,2]" class="fa fa-star" aria-hidden="true"></i>
+				  </div>
+				  <div *ngIf="comment.rating == 3">
+				  	<i *ngFor="let i of [1,2,3]" class="fa fa-star" aria-hidden="true"></i>
+				  </div>
 				  <p class="mb-0">{{comment.content}}</p>
 				  <footer class="blockquote-footer">{{comment.fullName}}</footer>
 				</blockquote>

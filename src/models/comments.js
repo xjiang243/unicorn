@@ -13,11 +13,16 @@ var schema = new mongoose.Schema({
 	},
 	content: {
 		type: String,
+		require: true
 	},
 	rating: {
-		type: Boolean,
+		type: Number,
 		required: true
+	},
+	myCheckbox: {
+		type: Boolean
 	}
+
 });
 schema.plugin(mongooseUniqueValidator);
 module.exports = mongoose.model("comments", schema);
