@@ -19,6 +19,7 @@ export class ContactComponent implements OnInit {
   private rating: Number;
   private mycheckbox: Boolean;
   private comments: Comment[];
+  private time: String;
 
   constructor(private commentService: CommentService) {}
 
@@ -29,8 +30,13 @@ export class ContactComponent implements OnInit {
 
   onSubmit(form: NgForm){
 
+    var _date=new Date().getDate();
+    var _month=new Date().getMonth();
+    var _year=new Date().getFullYear();
+
+    this.time = _month + "/" + _date + "/" + _year;
     this.comment = new Comment(form.value.fullName, form.value.inputEmail, form.value.textarea, 
-    Number(this.rating), this.mycheckbox)
+    Number(this.rating), this.mycheckbox, this.time);
     console.log(this.comment);
     this.commentService.addComment(this.comment);
     this.comments.push(this.comment);
