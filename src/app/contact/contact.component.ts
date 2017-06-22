@@ -34,14 +34,14 @@ export class ContactComponent implements OnInit {
     var _month=new Date().getMonth();
     var _year=new Date().getFullYear();
 
-    this.time = _month + "/" + _date + "/" + _year;
+    this.time = (_month+1) + "/" + _date + "/" + _year;
     this.comment = new Comment(form.value.fullName, form.value.inputEmail, form.value.textarea, 
     Number(this.rating), this.mycheckbox, this.time);
     console.log(this.comment);
     this.commentService.addComment(this.comment);
-    this.comments.push(this.comment);
     form.reset();
     this.mycheckbox = false;
+    location.reload();
   }
 
   delete(id: string){
